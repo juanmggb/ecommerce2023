@@ -1,5 +1,6 @@
 # Byte-compiled / optimized Python files
-__pycache__/
+# By adding **/__pycache__/ to the .gitignore, all __pycache__ folders within any subdirectories will be ignored as well. This ensures that no __pycache__ folders or their contents are considered for version control in your Django projec
+**/__pycache__/
 *.pyc
 *.pyo
 *.pyd
