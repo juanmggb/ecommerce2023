@@ -14,8 +14,8 @@ __pycache__/
 *.pid
 
 # Django static and media files (assumes 'static' and 'media' directories in your project root)
-static/
-media/
+# static/
+# media/
 
 # Database files (if using SQLite)
 *.sqlite3
