@@ -1,2 +1,39 @@
-venv/
+# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
+# Caches and logs
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+# Development server PID file
+*.pid
+
+# Django static and media files (assumes 'static' and 'media' directories in your project root)
+static/
+media/
+
+# Database files (if using SQLite)
+*.sqlite3
+
+# Virtual environment
+venv/
+.env
+
+# IDE-specific files (uncomment if you're using one of the following IDEs)
+# .vscode/
+# .idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore .env file in production (uncomment if using an .env file for sensitive information)
+# .env.production
+
+# Ignore local settings file (comment this if you want to version control your local settings)
+# settings_local.py
