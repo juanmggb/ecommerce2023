@@ -15,6 +15,10 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name="product", null=True
+    )
+
     title = models.CharField(max_length=250)
 
     brand = models.CharField(max_length=250, default="un-branded")
@@ -25,14 +29,10 @@ class Product(models.Model):
 
     price = models.DecimalField(max_digits=4, decimal_places=2)
 
-    # category = models.ForeignKey(Category, on_delete=models.CASCADE)
-
     image = models.ImageField(upload_to="images/")
 
     class Meta:
         verbose_name_plural = "products"
 
-
     def __str__(self):
-
         return str(self.title)
