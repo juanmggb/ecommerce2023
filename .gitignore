@@ -19,10 +19,10 @@ __pycache__/
 # media/
 
 # Database files (if using SQLite)
-*.sqlite3
+# *.sqlite3
 
 # Ignore the Django database file
-db.sqlite3
+# db.sqlite3
 
 # Virtual environment
 venv/

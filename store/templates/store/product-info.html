@@ -29,7 +29,7 @@
               <div class="col-6">Price</div>
 
               <div class="col-6 text-end">
-                <span class="h4 fw-bold">$ {{ prodict.price }} </span>
+                <span class="h4 fw-bold">$ {{ product.price }} </span>
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
                 <button
                   type="button"
                   id="add-button"
-                  value=""
+                  value="{{ product.id }}"
                   class="btn btn-secondary btn-sm"
                 >
                   Add to cart
@@ -71,5 +71,30 @@
 
   <br />
 </div>
+
+<script>
+  $(document).on("click", "#add-button", function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      type: "POST",
+      url: "{% url 'cart-add' %}",
+      data: {
+        product_id: $("#add-button").val(),
+        product_quantity: $("#select option:selected").text(),
+        csrfmiddlewaretoken: "{{ csrf_token }}",
+        action: "post",
+      },
+
+      success: function (json) {
+        console.log(json);
+
+        cartQty = document.getElementById("cart-qty").textContent = json.qty;
+      },
+
+      error: function (xhr, errmsg, err) {},
+    });
+  });
+</script>
 
 {% endblock %}
