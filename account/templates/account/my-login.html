@@ -19,11 +19,11 @@
 
         <div class="container bg-white shadow-md p-5 form-layout">
 
-            <h3>Create your account</h3>
+            <h3>Login to your account</h3>
 
             <hr>
 
-            <h5>Purchase your favorite products today</h5>
+            <h5>Introduce credentials</h5>
 
             <br>
 
@@ -35,28 +35,27 @@
 
                 <br>
 
-                {{ form.email|as_crispy_field }}
 
-                <br>
-
-                {{ form.password1|as_crispy_field }}
-
-                <br>
-
-                {{ form.password2|as_crispy_field }}
+                {{ form.password|as_crispy_field }}
 
                 <br>
                 <br>
 
                 <button type="submit" class="btn btn-primary navbar-btn text-white w-100 p-2">
-                    &nbsp; Create your account
+                    <i class="fa fa-key" aria-hidden="true"></i> &nbsp; Login
                 </button>
 
-                <br>
-
                 <div class="text-center mt-3">
-                    <a href="{% url 'my-login' %}">Already a user?</a>
+                    <a href="{% url 'register' %}">Don't have an account?</a>
+
+                    <br> <br>
+
+                    {{form.non_field_errors}}
+
+                    <a href="{% url 'reset_password' %}">Forgotten your password?</a>
                 </div>
+
+
 
 
             </form>
